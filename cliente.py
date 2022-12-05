@@ -27,7 +27,7 @@ def client_program():
         jogada = jogador.escolheJogada(contador, jogadaOponente)
         jogadaPython = str(jogada) + "\r\n"                         # prepara jogada para ser enviada
         client_socket.send(jogadaPython.encode())                   # envia jogada
-        jogadaOponente = int(client_socket.recv(1024).decode()  )   # recebe jogada do oponente e atualiza jogadaOponente
+        jogadaOponente = int(client_socket.recv(1024).decode())     # recebe jogada do oponente e atualiza jogadaOponente
 
         print("     Partida ", (contador+1), "\n")
         print('Jogada Python: ', dicionarioJogada[jogada])
@@ -38,7 +38,7 @@ def client_program():
 
         contador +=1
 
-    print("Resumo:  ", jogo.resumoPartidas(resultadosArray))
+    print("RESUMO:  ", jogo.resumoPartidas(resultadosArray))
   
     client_socket.close()  
 
